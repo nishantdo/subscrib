@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+        .proposal-box {
+            border: 2px solid #6a5acd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            max-width: 400px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes-button {
+            background-color: #32cd32;
+        }
+        .no-button {
+            background-color: #ff6347;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="proposal-box">
+    <h1>yarrr Vaibhavi yes or no (ghe samjun yarr) 💍</h1>
+    <button class="yes-button" onclick="showYesMessage()">Yes</button>
+    <button class="no-button" id="noButton" onclick="moveNoButton()">No</button>
+    <p id="response-message"></p>
+</div>
+
+<script>
+    const noButton = document.getElementById("noButton");
+
+    noButton.addEventListener("mouseover", moveNoButton);
+
+    function moveNoButton() {
+        const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+        const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+        noButton.style.left = x + "px";
+        noButton.style.top = y + "px";
+    }
+
+    function showYesMessage() {
+        document.getElementById("response-message").textContent = "Yay! 💖 You've made me the happiest person kharchh yarr!";
+    }
+</script>
+
+</body>
+</html>
